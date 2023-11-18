@@ -23,10 +23,7 @@ public class Main {
      for(int i = 0; i < 722; i++){
        tilelist.addAll(genHex(tilelist.get(i),false));
      }
-    //  System.out.println(tilelist.size()-90);
-      // for(int i = 632; i < tilelist.size(); i++){
-      //    tilelist.get(i).tileType = "ocean";
-      //  }
+ 
      
        tilelist.sort((a, b) -> a.cords[1].compareTo(b.cords[1]));
    
