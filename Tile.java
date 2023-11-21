@@ -24,6 +24,10 @@ public class Tile{
     return benbruh;
     
   }
+  public void setType(String type){
+    this.tileType = type;
+    
+  }
   public static Tile genRTile(Tile ben,String type){
     Integer[] newcords = new Integer[2];
     newcords[0] = ben.cords[0]+32;
