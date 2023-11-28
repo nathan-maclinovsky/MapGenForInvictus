@@ -110,7 +110,8 @@ public class Map {
 
   }
   public static void addMountains(List<Tile> tilelist,int upperlim){
-    int numMounts = (int)(Math.random()*upperlim);
+    //int numMounts = (int)(Math.random()*upperlim);
+    int numMounts = 20;
     for(int i = 0; i < numMounts; i++){
       int index = (int)(Math.random()*tilelist.size());
       tilelist.get(index).setType("Mountain");
