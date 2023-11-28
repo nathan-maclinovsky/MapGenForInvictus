@@ -45,7 +45,7 @@ public class Map {
 
       try {
          FileWriter file = new FileWriter("db.js");
-        file.write("tiles = ");
+        file.write("var tiles = ");
           file.write(map.toJSONString());
         file.write("\n window.tiles = tiles");
          file.close();
