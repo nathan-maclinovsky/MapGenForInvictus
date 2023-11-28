@@ -27,7 +27,7 @@ public class Map {
      }
   System.out.println(tilelist.size());
 
-    addMountains(tilelist);
+    addMountains(tilelist,20);
     tilelist.sort((a, b) -> a.cords[1].compareTo(b.cords[1]));
     
     for(int i = 0; i < tilelist.size(); i++){
@@ -109,8 +109,8 @@ public class Map {
 
 
   }
-  public static void addMountains(List<Tile> tilelist){
-    int numMounts = (int)(Math.random()*10);
+  public static void addMountains(List<Tile> tilelist,int upperlim){
+    int numMounts = (int)(Math.random()*upperlim);
     for(int i = 0; i < numMounts; i++){
       int index = (int)(Math.random()*tilelist.size());
       tilelist.get(index).setType("Mountain");
