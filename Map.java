@@ -45,7 +45,9 @@ public class Map {
 
       try {
          FileWriter file = new FileWriter("db.json");
-         file.write(map.toJSONString());
+        file.write("tiles = ");
+          file.write(map.toJSONString());
+        file.write("\n window.tiles = tiles");
          file.close();
       } catch (IOException e) {
         
