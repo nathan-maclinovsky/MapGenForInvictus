@@ -25,6 +25,7 @@ public class Map {
      for(int i = 0; i < 722; i++){
        tilelist.addAll(genHex(tilelist.get(i),false));
      }
+  System.out.println(tilelist.size());
 
     addMountains(tilelist);
     tilelist.sort((a, b) -> a.cords[1].compareTo(b.cords[1]));
@@ -43,7 +44,7 @@ public class Map {
 
 
       try {
-         FileWriter file = new FileWriter("ben.json");
+         FileWriter file = new FileWriter("db.json");
          file.write(map.toJSONString());
          file.close();
       } catch (IOException e) {
