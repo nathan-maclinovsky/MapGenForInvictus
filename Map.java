@@ -9,32 +9,41 @@ import java.util.HashMap;
 public class Map {
  
   static List<Tile> tilelist;
+  
   private static HashMap<String, Integer> tilelistcords = new HashMap<>();
   
-  
-  
   public static void genMap() {
+    
   JSONObject map = new JSONObject();
+    
   List<JSONObject> list = new ArrayList<>();
   Integer[] mytilecords = new Integer[2];
   mytilecords[0] = 750;
   mytilecords[1] = 750;
 
   Tile center = new Tile(mytilecords,"grass");
+    
   tilelist = genHex(center,true);
      for(int i = 0; i < 722; i++){
        tilelist.addAll(genHex(tilelist.get(i),false));
      }
-  System.out.println(tilelist.size());
-
-    addMountains(tilelist,20);
-    tilelist.sort((a, b) -> a.cords[1].compareTo(b.cords[1]));
     
-    for(int i = 0; i < tilelist.size(); i++){
+  // System.out.println(tilelist.size());
+
+  addMountains(tilelist,20);
+  
+  tilelist.sort((a, b) -> a.cords[1].compareTo(b.cords[1]));
+    
+  for(int i = 0; i < tilelist.size(); i++){
+    
        List<Integer> curentcords= Arrays.asList(tilelist.get(i).cords);
+    
        JSONObject tile = new JSONObject();
+    
        tile.put("coords",curentcords);
+    
        tile.put("type",tilelist.get(i).tileType);
+    
        list.add(tile);
      }
      map.put("tileList",list);
